@@ -1,0 +1,100 @@
+[alias]
+  # shortcuts
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  addp = add -p .
+  st = status
+  ss = status --short
+
+  # infos
+  fame = shortlog -s --
+  st = status
+  ch = diff --name-status -r
+  df = diff
+  last = log -1 HEAD
+
+  # undo
+  unadd = reset HEAD --
+  unstage = reset HEAD --
+  unch = checkout --
+  unci = reset --soft
+  rmun = clean -f
+
+  # recommit
+  reco = commit --amend
+
+  # tags
+  tags = tag
+  lasttag = describe --tags --abbrev=0
+
+  # fix merge conficts
+  resolved = add
+
+  # branches
+  branches = branch -av
+  br = checkout
+  bra = branch -a
+  newbr = checkout -b
+  rmbr = branch -d
+  mvbr = branch -m
+  trackbr = git checkout --track
+  menoff = merge --no-ff
+  cleanbr = "!git remote prune origin && git co master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git co -"
+
+  # assume-unchanged
+  as = update-index --assume-unchanged
+  nas = update-index --no-assume-unchanged
+
+  # log
+  l = log --oneline --decorate --graph -20
+  t = log --oneline --decorate --graph --branches --remotes -20
+  lg = log --oneline --decorate --graph --branches --remotes -20 --pretty=format:'%C(yellow)%h%C(red bold)%d %Creset%s %C(green)(%ar) %C(cyan)<%cn>' --date=relative
+  ll = log --oneline --decorate --stat --graph
+  ls = log --oneline --decorate --graph --branches --remotes --simplify-by-decoration
+
+  # list aliases
+  al = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = green
+  changed = yellow
+  untracked = red
+
+[user]
+  name = 'Matteo Piotto'
+  email = matteo.piotto@welaika.com
+
+[push]
+  default = upstream
+
+[pull]
+  rebase = true
+
+[core]
+  excludesfile = ~/.gitexcludes
+  editor = nano
+  pager = less -r
+
+[filter "lfs"]
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+
+; vim: ft=gitconfig
