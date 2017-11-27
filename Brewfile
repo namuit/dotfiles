@@ -81,6 +81,7 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "youtube-dl"
+brew "mysql@5.6"
 
 cask "dropbox"
 cask "flux"
@@ -90,9 +91,15 @@ cask "licecap"
 cask "ngrok"
 cask "slack"
 cask "spotify"
-cask "telegram"
+cask "telegram-desktop"
 cask "transmission"
 cask "vlc"
 cask 'visual-studio-code'
 cask 'android-file-transfer'
 cask 'firefox'
+cask 'launchrocket'
+cask 'sequel-pro'
+cask 'istat-menus'
+cask 'resilio-sync'
+cask 'rambox'
+cask 'macpass'
