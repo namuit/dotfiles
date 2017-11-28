@@ -87,7 +87,6 @@ cask "dropbox"
 cask "flux"
 cask "imageoptim"
 cask "iterm2"
-cask "licecap"
 cask "ngrok"
 cask "slack"
 cask "spotify"
@@ -103,3 +102,6 @@ cask 'istat-menus'
 cask 'resilio-sync'
 cask 'rambox'
 cask 'macpass'
+cask 'cloudapp'
+cask 'beardedspice'
+cask 'opera'
